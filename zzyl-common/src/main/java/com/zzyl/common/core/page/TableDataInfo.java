@@ -1,5 +1,7 @@
 package com.zzyl.common.core.page;
 
+import io.swagger.annotations.ApiParam;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -8,20 +10,24 @@ import java.util.List;
  * 
  * @author ruoyi
  */
-public class TableDataInfo implements Serializable
+public class TableDataInfo<T> implements Serializable
 {
     private static final long serialVersionUID = 1L;
 
     /** 总记录数 */
+    @ApiParam("总记录数")
     private long total;
 
     /** 列表数据 */
-    private List<?> rows;
+    @ApiParam("列表数据")
+    private List<T> rows;
 
     /** 消息状态码 */
+    @ApiParam("消息状态码")
     private int code;
 
     /** 消息内容 */
+    @ApiParam("消息内容")
     private String msg;
 
     /**
@@ -37,7 +43,7 @@ public class TableDataInfo implements Serializable
      * @param list 列表数据
      * @param total 总记录数
      */
-    public TableDataInfo(List<?> list, long total)
+    public TableDataInfo(List<T> list, long total)
     {
         this.rows = list;
         this.total = total;
@@ -53,12 +59,12 @@ public class TableDataInfo implements Serializable
         this.total = total;
     }
 
-    public List<?> getRows()
+    public List<T> getRows()
     {
         return rows;
     }
 
-    public void setRows(List<?> rows)
+    public void setRows(List<T> rows)
     {
         this.rows = rows;
     }

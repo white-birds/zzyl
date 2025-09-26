@@ -2,6 +2,8 @@ package com.zzyl.common.core.domain;
 
 import java.io.Serializable;
 import com.zzyl.common.constant.HttpStatus;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 
 /**
  * 响应信息主体
@@ -108,7 +110,8 @@ public class R<T> implements Serializable
         return !isSuccess(ret);
     }
 
-    public static <T> Boolean isSuccess(R<T> ret)
+    @ApiOperation("判断响应结果是否为成功")
+    public static <T> Boolean isSuccess(@ApiParam(value = "响应结果对象") R<T> ret)
     {
         return R.SUCCESS == ret.getCode();
     }
