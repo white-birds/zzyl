@@ -35,6 +35,8 @@
         <logback.version>1.2.13</logback.version>
         <spring-security.version>5.7.14</spring-security.version>
         <spring-framework.version>5.3.39</spring-framework.version>
+        <lombok.version>1.18.22</lombok.version>
+        <mybatis-plus-spring-boot.version>3.5.2</mybatis-plus-spring-boot.version>
     </properties>
 
     <!-- 依赖声明 -->
@@ -55,7 +57,11 @@
                 <artifactId>zzyl-nursing-platform</artifactId>
                 <version>${zzyl.version}</version>
             </dependency>
-
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
 
             <!-- 覆盖SpringSecurity的依赖配置-->
             <dependency>
@@ -74,6 +80,7 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
 
             <!-- 覆盖logback的依赖配置-->
             <dependency>
@@ -224,7 +231,17 @@
                 <artifactId>zzyl-common</artifactId>
                 <version>${zzyl.version}</version>
             </dependency>
-
+            <!-- mybatis-plus 增强CRUD -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus-spring-boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-annotation</artifactId>
+                <version>${mybatis-plus-spring-boot.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
